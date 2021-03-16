@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 10px;
+}
+
+aside {
+    /* Specyfikacja wygl퉐u */
+    width: 50%;
+    float: right;
+}
+
+footer {
+    /* Specyfikacja wygl퉐u */
+}
+
+header {
+    /* Specyfikacja wygl퉐u */
+}
+
+main {
+    width: 40%;
+    clear: left;
+    /* Specyfikacja wygl퉐u */
+}
+
+nav {
+    width: auto;
+    float: left;
+    /* Specyfikacja wygl퉐u */
+}
+
+    nav ul {
+        /* Specyfikacja wygl퉐u */
+    }
+
+    nav li {
+        /* Specyfikacja wygl퉐u */
+    }
+
+li {
+    margin-left: 35px;
+}
+
+blockquote p {
+    margin-bottom: 1em;
+}
+
+.azure {
+    background-color: azure;
+    border: black 1px solid;
+    margin-bottom: 5px;
+    padding: 5px;
+    box-shadow: 0 0 5px 2px grey;
+    font-size: 1.2em;
+}
+
+.redToBlue {
+    animation: redToBlue 4s infinite alternate;
+    -webkit-animation: redToBlue 4s infinite alternate;
+    animation-delay: 0s;
+}
+
+@keyframes redToBlue {
+    0% {
+        color: red;
+    }
+    50% {
+        color: blue;
+    }
+    100% {
+        color: red;
+    }
+}
+
+@-webkit-keyframes redToBlue {
+    0% {
+        color: red;
+    }
+
+    50% {
+        color: blue;
+    }
+
+    100% {
+        color: red;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .azure {
+        box-sizing: border-box;
+        width: 100%;
+        float: none;
+    }
+}
