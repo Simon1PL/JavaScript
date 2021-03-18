@@ -11,56 +11,136 @@
     <title>
         Tytuł strony
     </title>
+    <style>
+        .main {
+            width: 80%;
+            margin: 64px auto 30px;
+            animation-name: animation;
+            animation-duration: 4s;
+            animation-iteration-count: 1;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+        }
+        nav {
+            overflow: visible !important;
+        }
+        .img {
+            width: 40%;
+            display: block;
+        }
+        .navToggler {
+            display: none !important;
+        }
+        .navLink {
+            text-decoration: none;
+        }
+        @media screen and (max-width: 600px) {
+            .navToggler {
+                display: block !important;
+            }
+            .responsiveMenu {
+                display: none;
+                width: 100%;
+                clear: both;
+            }
+        }
+        @keyframes animation {
+            33.3%{
+                transform: rotateY(180deg);
+            }
+            66.6%{
+                transform: rotateX(180deg);
+            }
+            100%{
+                transform: none;
+            }   
+        }
+    </style>
+    <script>
+        function navDropdawn() {
+            var x = document.getElementById("navDropdawn");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else { 
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+        function toggleNav() {
+            var menuElements = document.getElementsByClassName("responsiveMenu");
+            for(var i=0; i<menuElements.length; i++){
+                if (menuElements[i].classList.contains("w3-show")) {
+                    menuElements[i].classList.remove("w3-show");
+                }
+                else {
+                    menuElements[i].classList.add("w3-show");
+                }
+            };
+        }
+    </script>
 </head>
-<body>
-    <nav>
+<body class="w3-black">
+    <nav class="w3-bar w3-light-grey w3-top w3-padding">
         <!--Tutaj menu nawigacyjne / Here the navigation menu -->
-
-        <ul>
-            <li>
-                <a href="">Element 1</a>
-            </li>
-
-            <li>
-                <a href="">Element 2</a>
-            </li>
-        </ul>
+        <a href="" class="w3-button w3-bar-item">
+            <i class="fa fa-home"></i>
+        </a>
+        <button class="w3-button w3-bar-item navToggler" onclick="toggleNav()">
+            <i class="fa fa-bars"></i>
+        </button>
+        <div class="responsiveMenu">
+            <div class="w3-dropdown-click">
+                <button class="w3-button" onclick="navDropdawn()">
+                    Dropdown <i class="fa fa-caret-down"></i>
+                </button>
+                <ul id="navDropdawn" class="w3-dropdown-content w3-bar-block">
+                    <li class="w3-bar-item w3-button">
+                        <a href="" class="navLink">Element 1</a>
+                    </li>
+                    <li class="w3-bar-item w3-button">
+                        <a href="" class="navLink">Element 2</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="w3-right responsiveMenu">
+            <input type="text" class="w3-bar-item w3-input searchInput" placeholder="Search..">
+            <button class="w3-bar-item w3-button w3-green">Search</button>
+        </div>
     </nav>
 
-    <main>
+    <main class="main">
         <!-- Tutaj treść strony / Here the content of the page-->
-
-        <h1>
-            Treść strony
-        </h1>
-
-        <pre>
-Natenczas Wojski chwycił na taśmie przypięty
-Swój róg bawoli, długi, cętkowany, kręty
-Jak wąż boa, oburącz do ust go przycisnął,
-Wzdął policzki jak banię, w oczach krwią zabłysnął,
-Zasunął wpół powieki, wciągnął w głąb pół brzucha
-I do płuc wysłał z niego cały zapas ducha,
-I zagrał: róg jak wicher, wirowatym dechem
-Niesie w puszczę muzykę i podwaja echem.
-
-Umilkli strzelcy, stali szczwacze zadziwieni
-Mocą, czystością, dziwną harmoniją pieni.
-Starzec cały kunszt, którym niegdyś w lasach słynął,
-Jeszcze raz przed uszami myśliwców rozwinął;
-Napełnił wnet, ożywił knieje i dąbrowy,
-Jakby psiarnię w nie wpuścił i rozpoczął łowy.
-
-Bo w graniu była łowów historyja krótka:
-Zrazu odzew dźwięczący, rześki: to pobudka;
-Potem jęki po jękach skomlą: to psów granie;
-A gdzieniegdzie ton twardszy jak grzmot: to strzelanie.
-  </pre>
+        <div class="w3-row">
+            <div class="w3-col m8 s12">
+                <div class="w3-border w3-margin">
+                    <img src="https://cdn.trendhunterstatic.com/thumbs/ink-drawings.jpeg" alt="tab1 image" class="img">
+                    tab1
+                </div>
+            </div>
+            <div class="w3-col m4 s12">
+                <div class="w3-border w3-margin">
+                    <img src="https://cdn.trendhunterstatic.com/thumbs/ink-drawings.jpeg" alt="tab2 image" class="img">
+                    tab2
+                </div>
+            </div>
+        </div>
+        <div class="w3-row">
+            <div class="w3-col m4 s12">
+                <div class="w3-border w3-margin">
+                    <img src="https://0.allegroimg.com/s512/037fff/5f37347744e8a5e75e3cd3c71470/Tatuaz-TYMCZASOWY-KOT-kotek-cat-kolor-art-farba-Plec-Produkt-uniseks" alt="tab3 image" class="img">
+                    tab3
+                </div>
+            </div>
+            <div class="w3-col m4 s12">
+                <div class="w3-border w3-margin">
+                    <img src="https://0.allegroimg.com/s512/037fff/5f37347744e8a5e75e3cd3c71470/Tatuaz-TYMCZASOWY-KOT-kotek-cat-kolor-art-farba-Plec-Produkt-uniseks" alt="tab4 image"  class="img">
+                    tab4
+                </div>
+            </div>
+        </div>
+        <footer class="w3-light-grey w3-padding">
+            <a href="mailto:twoj.adres.email">Imię Nazwisko</a>
+        </footer>
     </main>
-
-    <footer>
-        <!-- Tutaj treść stopki / Here the content of the footer -->
-        <a href="mailto:twoj.adres.email">Imię Nazwisko</a>
-    </footer>
 </body>
 </html>

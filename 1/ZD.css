@@ -8,37 +8,37 @@ body {
 }
 
 aside {
-    /* Specyfikacja wygl¹du */
+    /* Specyfikacja wyglï¿½du */
     width: 50%;
     float: right;
 }
 
 footer {
-    /* Specyfikacja wygl¹du */
+    /* Specyfikacja wyglï¿½du */
 }
 
 header {
-    /* Specyfikacja wygl¹du */
+    /* Specyfikacja wyglï¿½du */
 }
 
 main {
     width: 40%;
     clear: left;
-    /* Specyfikacja wygl¹du */
+    /* Specyfikacja wyglï¿½du */
 }
 
 nav {
     width: auto;
     float: left;
-    /* Specyfikacja wygl¹du */
+    /* Specyfikacja wyglï¿½du */
 }
 
     nav ul {
-        /* Specyfikacja wygl¹du */
+        /* Specyfikacja wyglï¿½du */
     }
 
     nav li {
-        /* Specyfikacja wygl¹du */
+        /* Specyfikacja wyglï¿½du */
     }
 
 li {
