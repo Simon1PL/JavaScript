@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        Tytuł strony
+    </title>
+</head>
+<body style="font-size: 20px;">
+	<form>
+        <textarea name="nazwa" cols="x" rows="y" style="height: 200px; width: 500px;" placeholder="Tu wpisz tekst">nazwa=auto1, marka=volvo, pojemność silnika=2l</textarea>
+        <br>
+        <label for="session storage">session storage</label>
+        <input id="session storage" name="session storage" type="checkbox">
+        <br>
+        <input style="padding: 10px;" type="button" value="Dodaj" onclick="dodaj()">
+        <input style="padding: 10px;" type="button" value="Wypisz" onclick="wypisz()">
+        <input style="padding: 10px;" type="button" value="Przykladowe dane" onclick="fill()">
+	</form>
+	<div id="result"></div>
+
+    <div id="mocha"></div>
+    <script src="https://unpkg.com/chai/chai.js"></script>
+    <script src="https://unpkg.com/mocha/mocha.js"></script>
+    <script class="mocha-init">
+      mocha.setup('bdd');
+      mocha.checkLeaks();
+    </script>
+    <script src="laby.js"></script>
+    <script class="mocha-exec">
+      mocha.run();
+    </script>
+</body>
+</html>
