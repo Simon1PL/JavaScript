@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="plotLibrary.css">
+    <title>Plots</title>
+</head>
+<body>
+    <main class="flex">
+        <div class="plot">
+            <section id="label" class="label"></section>
+            <canvas id="canvas" class="canvas">
+                Your browser does not support the "canvas" element
+            </canvas>
+        </div>
+        <div class="plot">
+            <section id="label2" class="label"></section>
+            <canvas id="canvas2" class="canvas">
+                Your browser does not support the "canvas" element
+            </canvas>
+        </div>
+    </main>
+    <input type="text" id="elementName">
+    <button id="add">DODAJ</button>
+    <button id="remove">USUN</button>
+    <script type="module" src="index.mjs"></script>
+</body>
+</html>

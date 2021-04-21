@@ -1,0 +1,21 @@
+.canvas {
+    height: 100%;
+    width: 100%;
+}
+
+.plot {
+    position: relative;
+    width: 50%;
+    height: 400px;
+}
+
+.label {
+    position: absolute;
+    top: 0;
+    left: 10px;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
