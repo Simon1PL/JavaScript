@@ -1,0 +1,28 @@
+{
+  "name": "helloworld",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx mocha",
+    "start": "node app2.js",
+    "app1": "echo 'I am script-1' && node app1.js",
+    "app2": "echo 'I am script-2' && node app2.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai-http": "^4.3.0",
+    "chai-webdriver": "^1.2.3",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "pug": "^3.0.2",
+    "yarn": "^1.22.10"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "chai-json": "^1.0.0",
+    "mocha": "^8.4.0",
+    "supertest": "^6.1.3"
+  }
+}
