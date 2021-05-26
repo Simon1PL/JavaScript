@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>
+      Form
+    </title>
+    <script>
+      async function download() {
+        document.getElementById("remote").innerHTML = "";
+        document.getElementById("remote").appendChild(document.createTextNode("dowloaading data"));
+        try {
+          var area = document.getElementById("area").value;
+          var location = document.getElementById("location").value;
+            response = await fetch('https://worldtimeapi.org/api/timezone/'+area+"/"+location
+            // , {
+            //   mode: 'no-cors',
+            //   headers: {
+            //     'Access-Control-Allow-Origin':'*'
+            // }}
+            ); 
+            if (!response.ok) {
+              throw Error(response.statusText);
+            }
+            var data = await response.json();
+            document.getElementById("remote").innerHTML = "";
+            if (data.toString().includes("This website is currently experiencing high load.")) {
+              document.getElementById("remote").appendChild(document.createTextNode("The server is overloaded"));
+            }
+            else
+              document.getElementById("remote").appendChild(document.createTextNode(data.datetime));
+          }
+          catch (error) {
+            window.alert(error);
+          document.getElementById("remote").innerHTML = "";
+            document.getElementById("remote").appendChild(document.createTextNode(error));
+          }
+      }
+      async function download1() {
+        document.getElementById("remote").innerHTML = "";
+        document.getElementById("remote").appendChild(document.createTextNode("dowloaading data"));
+        try {
+          var area = document.getElementById("area").value;
+          var location = document.getElementById("location").value;
+            response = await fetch('http://localhost:8081/'); 
+            if (!response.ok) {
+              throw Error(response.statusText);
+            }
+            var data = await response.text();
+            document.getElementById("local").innerHTML = "";
+            let parser = new DOMParser();
+            let xmlDoc = parser.parseFromString(data, 'text/xml');
+            console.log(xmlDoc.getElementsByTagName("root"));
+            // document.getElementById("local").innerHTML = data;
+            document.getElementById("local").appendChild(xmlDoc.documentElement); //wow ale guwno...
+          }
+          catch (error) {
+            window.alert(error);
+          document.getElementById("local").innerHTML = "";
+            document.getElementById("local").appendChild(document.createTextNode(error));
+          }
+        }
+    </script>
+  </head>
+  <body>
+    <form>
+      <input type="text" id="area" placeholder="area" value="Europe"> 
+      <input type="text" id="location" placeholder="location" value="London"> 
+      <input type="button" value="Pobierz" onclick="download(); download1()">
+    </form>
+    <h1>Remote</h1>
+    <div id='remote'>
+    Remote date and time
+    </div>
+    <!-- ***************** -->
+    <h1>Local</h1>
+    <div id='local'>
+    Local date and time
+    </div>
+  </body>
+</html>
